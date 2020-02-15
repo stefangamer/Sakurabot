@@ -151,17 +151,13 @@ client.on("message", async message => {
     fetched = parseInt(yeet)
 	    message.channel.bulkDelete(fetched)    
         message.channel.send(`Reported ${member} successfully.`)
-        client.channels.get('598342357561245696').send(`${message.author} Reports ${member} for ***${reason}*** <@&544289803416502274> <@&544290091842142239>.`);
+        client.channels.get('678246886569803807').send(`${message.author} Reports ${member} for ***${reason}*** <@&544289803416502274> <@&544290091842142239>.`);
     }
 	
 if (command === "price") {
 	            message.channel.bulkDelete(1) 
         const sayMessage = args.join(" ");
         client.channels.get('552278793759227905').send(`${message.author} Requested the price of: **${sayMessage}** <@&552460574563237909>.`);
-	}
-	
-if (command === "bruh") {
-message.channel.send(`${message.author} **IS IN A BRUHHHHHHHHHHH MOMENT**`)
 	}
 	
 if (command === "avatar") {
@@ -216,11 +212,11 @@ message.channel.send(avatarList);
         .setTitle('User Successfully Warned!');
     message.channel.send(warnSuccessfulEmbed); // Sends the warn successful embed
     message.delete(); // Deletes the command
-    client.channels.get('544625078823026700').send(`${mentioned} has ben warned for **${reason}** by **${message.author}**`);
+    client.channels.get('678245518287306762').send(warningEmbed);
 }
  
   
-  if(command === "say") {if(message.member.roles.some(r=>["Dev", "Boterator", "Bot Designer", "Emperor", "High Power", "DJ", "Administrator", "Technician PRO"].includes(r.name)) ) {
+  if(command === "say") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
     const sayMessage = args.join(" ");
@@ -273,7 +269,7 @@ if (command === "nick") {
   if(!tomute) return message.reply("Couldn't find user.");
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
   let reason = args.slice(2).join(" ");
-  if(!reason) return message.reply("Usage is !mute (user) (time in minutes) (reason)");
+  if(!reason) return message.reply("Usage is -mute (user) (time in minutes) (reason) \n EG: -mute @kyle 10 spam");
 
   let muterole = message.guild.roles.find(`name`, "muted");
   //start of create role
