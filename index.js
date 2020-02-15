@@ -68,37 +68,37 @@ client.on("message", async message => {
       icon_url: client.user.avatarURL
     },
     title: "Help",
-    description: "***_Hey there, here is a list of my commands❤***",
+    description: "**☕Hey there, here is a list of my commands☕**",
     fields: [{
-        name: "!report",
+        name: "-report",
         value: "Report a user to our staff members."
       },
 	  {
-        name: "!avatar",
+        name: "-avatar",
         value: "Request someones avatar."
       },
 	  {
-        name: "!role and !removerole",
+        name: "-role and -removerole",
         value: "Add or remove a role to a user."
       },
       {
-        name: "!kick",
-        value: "Kick a player (you need a role called moderator)."
+        name: "-kick",
+        value: "Kick a player (Mod only)."
       },
       {
-        name: "!ban",
-        value: "Ban a player (you need a role called admin)."
+        name: "-ban",
+        value: "Ban a player (Admin only)."
 	  },
       {
-        name: "!purge (amount)",
+        name: "-purge (amount)",
         value: "Deletes the last x messages."
       },
 	  {
-        name: "!mute and !unmute",
+        name: "-mute and -unmute",
         value: "Mute or unmute a user."
       },
       {
-        name: "!warn",
+        name: "-warn",
         value: "Give a user a warning."
       }
     ],
@@ -170,11 +170,12 @@ message.channel.send(avatarList);
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
+	let warnedmember = message.mentions.members.first()
 	
     var warningEmbed2 = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!
         .setColor(embedColor)
-        .setAuthor(message.mentions.members.first().username, message.mentions.members.first().avatarURL)
-        .setTitle(`${message.mentions.members.first()} has been warned in ${message.guild.name}`)
+        .setAuthor(warnedmember.username, warnedmember.avatarURL)
+        .setTitle(`${warnedmember.username} has been warned in ${message.guild.name}`)
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
