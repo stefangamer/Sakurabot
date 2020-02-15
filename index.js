@@ -135,6 +135,7 @@ message.channel.send(`${message.author} needs support  <@&671016730704740363>`)
     }
 
  if (command === "sakura") {
+	 message.channel.send("The command works, if it is fully functional it will send an image within 2 seconds after this message. Otherwise you're a retard Husky")
 	message.channel.send({ files: ["./images/1.jpeg"] });
     }
 	
