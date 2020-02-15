@@ -135,7 +135,7 @@ message.channel.send(`${message.author} needs support  <@&671016730704740363>`)
     }
 
  if (command === "sakura") {
- var memes = Math.floor((Math.random() * 1) + 1); //change the 11 to how many memes you have
+ var memes = Math.floor((Math.random() * 5) + 1); //change the 11 to how many memes you have
             message.channel.send(new Discord.Attachment("./Images/" + memes + ".jpg", "./Images/" + memes + ".jpg"))
             message.channel.send(new Discord.Attachment("./Images/" + memes + ".png", "./Images/" + memes + ".png"))
     }
