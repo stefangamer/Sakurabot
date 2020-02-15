@@ -206,6 +206,14 @@ message.channel.send(avatarList);
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
+	
+    var warningEmbed2 = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!
+        .setColor(embedColor)
+        .setAuthor(message.mentions.members.first().username, message.mentions.members.first().avatarURL)
+        .setTitle(`${message.mentions.members.first()} has been warned in ${message.guild.name}`)
+        .addField('Warned by', message.author.tag)
+        .addField('Reason', reason)
+        .setTimestamp();
     mentioned.send(warningEmbed); // DMs the user the above embed!
     var warnSuccessfulEmbed = new Discord.RichEmbed() // Creates the embed thats returned to the person warning if its sent.
         .setColor(embedColor)
