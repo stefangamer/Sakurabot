@@ -220,7 +220,7 @@ message.channel.send(avatarList);
         .setTitle('User Successfully Warned!');
     message.channel.send(warnSuccessfulEmbed); // Sends the warn successful embed
     message.delete(); // Deletes the command
-    client.channels.get('678245518287306762').send(warningEmbed);
+    client.channels.get('678245518287306762').send(warningEmbed2);
 }
  
   
