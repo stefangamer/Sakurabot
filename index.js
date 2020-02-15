@@ -126,7 +126,7 @@ client.on("message", async message => {
     fetched = parseInt(yeet)
 	    message.channel.bulkDelete(fetched)    
         message.channel.send(`Reported ${member} successfully.`)
-        client.channels.get('671019711517032459').send(`${message.author} Reports ${member} for **${reason}** <@&671016730704740363> <@&592819335773290506>.`);
+        client.channels.get('671019711517032459').send(`${message.author} Reports ${member} for **${reason}** <@&671016730704740363> <@&671016759234396190>.`);
     }
 
  if (command === "support") {
