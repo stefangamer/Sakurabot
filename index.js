@@ -55,7 +55,7 @@ client.on("message", async message => {
 
   var role = member.guild.roles.find('name', 'Member');
   member.addRole(role);
-}
+});
   
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
