@@ -122,6 +122,12 @@ client.on("message", async message => {
         message.channel.send(`Reported ${member} successfully.`)
         client.channels.get('678246886569803807').send(`${message.author} Reports ${member} for **${reason}** <@&544289803416502274> <@&544290091842142239>.`);
     }
+
+ if (command === "support") {
+message.delete
+message.channel.send(`${message.author} needs support  <@&678244918048587799>`)
+    }
+	
 	
 	
 if (command === "avatar") {
