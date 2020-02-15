@@ -68,7 +68,7 @@ client.on("message", async message => {
       icon_url: client.user.avatarURL
     },
     title: "Help",
-    description: "**☕Hey there, here is a list of my commands☕**",
+    description: "**☕ Hey there, here is a list of my commands ☕**",
     fields: [{
         name: "-report",
         value: "Report a user to our staff members."
@@ -99,7 +99,7 @@ client.on("message", async message => {
       },
       {
         name: "-warn",
-        value: "Give a user a warning."
+        value: "Give a user a warning (trainee+)."
       }
     ],
     timestamp: new Date(),
@@ -174,8 +174,7 @@ message.channel.send(avatarList);
 	
     var warningEmbed2 = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!
         .setColor(embedColor)
-        .setAuthor(warnedmember.username, warnedmember.avatarURL)
-        .setTitle(`${warnedmember.username} has been warned in ${message.guild.name}`)
+        .setTitle(`${warnedmember} has been warned in ${message.guild.name}`)
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
