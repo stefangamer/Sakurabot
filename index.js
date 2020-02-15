@@ -133,8 +133,10 @@ client.on("message", async message => {
 message.delete
 message.channel.send(`${message.author} needs support  <@&671016730704740363>`)
     }
-	
-	
+
+ if (command === "sakura") {
+	message.channel.send({ files: ["./images/1.jpeg"] });
+    }
 	
 if (command === "avatar") {
   if (!message.mentions.users.size) {
