@@ -126,12 +126,12 @@ client.on("message", async message => {
     fetched = parseInt(yeet)
 	    message.channel.bulkDelete(fetched)    
         message.channel.send(`Reported ${member} successfully.`)
-        client.channels.get('678246886569803807').send(`${message.author} Reports ${member} for **${reason}** <@&544289803416502274> <@&544290091842142239>.`);
+        client.channels.get('671019711517032459').send(`${message.author} Reports ${member} for **${reason}** <@&671016730704740363> <@&592819335773290506>.`);
     }
 
  if (command === "support") {
 message.delete
-message.channel.send(`${message.author} needs support  <@&678244918048587799>`)
+message.channel.send(`${message.author} needs support  <@&671016730704740363>`)
     }
 	
 	
@@ -196,7 +196,7 @@ message.channel.send(avatarList);
         .setTitle('User Successfully Warned!');
     message.channel.send(warnSuccessfulEmbed); // Sends the warn successful embed
     message.delete(); // Deletes the command
-    client.channels.get('678245518287306762').send(warningEmbed2);
+    client.channels.get('678271951533506565').send(warningEmbed2);
 }
   
   if(command === "say") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
