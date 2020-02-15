@@ -68,26 +68,10 @@ client.on("message", async message => {
       icon_url: client.user.avatarURL
     },
     title: "Help",
-    description: "***_Hiya, These are my commands!_***",
+    description: "***_Hey there, here is a list of my commands❤***",
     fields: [{
-        name: "!ping",
-        value: "Calculate ping."
-      },
-	   {
         name: "!report",
-        value: "Report an ESC user."
-      },
-	   {
-        name: "!fc",
-        value: "Register your friend code."
-      },
-	   {
-        name: "!findp",
-        value: "Find a player to play with."
-      },
-	  {
-        name: "!price",
-        value: "Request the price of an item."
+        value: "Report a user to our staff members."
       },
 	  {
         name: "!avatar",
@@ -121,27 +105,12 @@ client.on("message", async message => {
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "ESC bot V.1.0.0"
+      text: "Sakura bot"
     }
   }
 });
   }
   
- if (command === "fc") {
-        const sayMessage = args.join(" ");
-		var yeet = 1
-		fetched = parseInt(yeet)
-        message.channel.bulkDelete(fetched)    
-        client.channels.get('544647708103671811').send(`${message.author} Registered friend code: **${sayMessage}**`);
-    }
-	
- if (command === "findp") {
-        const sayMessage = args.join(" ");
-		var yeet = 1
-		fetched = parseInt(yeet)
-        message.channel.bulkDelete(fetched)    
-        message.channel.send(`${message.author} **Wants To Play With Someone!** <@&583441672864530473>`);
-    }
 	
  if (command === "report") {
         const sayMessage = args.join(" ");
@@ -151,14 +120,9 @@ client.on("message", async message => {
     fetched = parseInt(yeet)
 	    message.channel.bulkDelete(fetched)    
         message.channel.send(`Reported ${member} successfully.`)
-        client.channels.get('678246886569803807').send(`${message.author} Reports ${member} for ***${reason}*** <@&544289803416502274> <@&544290091842142239>.`);
+        client.channels.get('678246886569803807').send(`${message.author} Reports ${member} for **${reason}** <@&544289803416502274> <@&544290091842142239>.`);
     }
 	
-if (command === "price") {
-	            message.channel.bulkDelete(1) 
-        const sayMessage = args.join(" ");
-        client.channels.get('552278793759227905').send(`${message.author} Requested the price of: **${sayMessage}** <@&552460574563237909>.`);
-	}
 	
 if (command === "avatar") {
   if (!message.mentions.users.size) {
@@ -222,7 +186,6 @@ message.channel.send(avatarList);
     message.delete(); // Deletes the command
     client.channels.get('678245518287306762').send(warningEmbed2);
 }
- 
   
   if(command === "say") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
