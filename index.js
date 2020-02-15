@@ -211,7 +211,7 @@ message.channel.send(avatarList);
   }
   
 if (command === "nick") {
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Hey! You can't do that!");
+        if(!message.member.hasPermission("MANAGE_NICKNAMES")) return message.reply("Hey! You can't do that!");
         let nick = args.slice(1).join(' ');
 		let nicked = message.mentions.members.first()
         message.mentions.members.first().setNickname(`${nick}`)
@@ -229,7 +229,7 @@ if (command === "nick") {
     // We can also support getting the member by ID, which would be args[0]
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
-      return message.reply("Please mention a valid member of this ESC!");
+      return message.reply("Please mention a valid member!");
     if(!member.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     
@@ -340,7 +340,7 @@ if(command === "unmute") {
 		
 		let member = message.mentions.members.first();
 		if(!member)
-		  return message.reply("Please mention a valid member of ESC!");
+		  return message.reply("Please mention a valid member!");
 		if(!member.bannable) 
 		  return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
