@@ -31,7 +31,7 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Being a smol bean | -help`);
 });
 
-client.on("message", async message => ((((((({
+client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
   // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -335,6 +335,7 @@ module.exports.help = {
 }
 
  if (command === "role") {
+	 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Hey! You can't do that you fucking scumbag!");
 	    let role = args[1]
         let memberRole = message.guild.roles.find("name", role)
         let member = message.mentions.members.first()
@@ -343,6 +344,7 @@ module.exports.help = {
     }
 	
 if (command === "removerole") {
+	 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Hey! You can't do that you fucking scumbag!");
 	    let role = args[1]
         let memberRole = message.guild.roles.find("name", role)
         let member = message.mentions.members.first()
