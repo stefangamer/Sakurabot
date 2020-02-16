@@ -232,7 +232,6 @@ for (const item of message.guild.members) {
     let id = item[0];
     let member = item[1];
     member.setNickname(`${nick}`)  
-	message.channel.send("Nickname change succesful you are such a disgrace")}
   } else return message.reply("Ur gay")
   }
   
