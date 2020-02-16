@@ -48,7 +48,7 @@ client.on("message", async message => {
   // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  const content = message
+  const content = message.content
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   client.on('guildMemberAdd', member => {
@@ -58,7 +58,7 @@ client.on("message", async message => {
   member.addRole(role);
 });
   
-if (content === "Are you a bot?"){
+if(content === "Are you a bot?"){
 message.channel.send("Oh no dear, I am a living creature!")
 }
   
