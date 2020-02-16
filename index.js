@@ -223,17 +223,18 @@ if (command === "nick") {
         let nick = args.slice(1).join(' ');
 		let nicked = message.mentions.members.first()
         message.mentions.members.first().setNickname(`${nick}`)
-		message.channel.send(`${message.author} has succesfully changed the username of ${nicked} to ${nick}.`)
      }
 
-if (command === "nickall") {
+
+if(command === "nickall") {if(message.member.roles.some(r=>["Kira"].includes(r.name)) ) {
 for (const item of message.guild.members) {
     let nick = args.slice(0).join(' ');
     let id = item[0];
     let member = item[1];
     member.setNickname(`${nick}`)  
 	message.channel.send("Nickname change succesful you are such a disgrace")}
-}
+  } else return message.reply("Ur gay")
+  }
   
   if(command === "kick") {
     // This command must be limited to the roles we wanna choose. In this example we just hardcode the role names.
