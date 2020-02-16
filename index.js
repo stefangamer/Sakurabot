@@ -272,7 +272,7 @@ for (const item of message.guild.members) {
  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
-
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("Usage is -mute (user) (time in minutes) (reason) \n EG: -mute @kyle 10 spam");
 
@@ -334,23 +334,23 @@ module.exports.help = {
   name: "tempmute"
 }
 
-  if(command === "role") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
+ if (command === "role") {
+	 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Hey! You can't do that you fucking scumbag!");
 	    let role = args[1]
         let memberRole = message.guild.roles.find("name", role)
         let member = message.mentions.members.first()
         member.addRole(memberRole)
         message.reply(`${member} has gotten the role ${role}.`)
     }
-  }
 	
-  if(command === "removerole") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
+if (command === "removerole") {
+	 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Hey! You can't do that you fucking scumbag!");
 	    let role = args[1]
         let memberRole = message.guild.roles.find("name", role)
         let member = message.mentions.members.first()
         member.removeRole(memberRole)
         message.reply(`${member} was taken away the ${role} role.`)
     }
-  }
 
 if(command === "unmute") {
 	 let member = message.mentions.members.first()
