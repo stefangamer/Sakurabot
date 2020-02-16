@@ -335,7 +335,6 @@ module.exports.help = {
 }
 
   if(command === "role") {if(message.member.roles.some(r=>["Kira", "Trainee", "Bot Designer", "Emperor", "High Power", "Mod", "Administrator", "Technician PRO"].includes(r.name)) ) {
-	 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Hey! You can't do that you fucking scumbag!");
 	    let role = args[1]
         let memberRole = message.guild.roles.find("name", role)
         let member = message.mentions.members.first()
