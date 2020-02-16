@@ -272,7 +272,7 @@ for (const item of message.guild.members) {
  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user.");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't mute them!");
+
   let reason = args.slice(2).join(" ");
   if(!reason) return message.reply("Usage is -mute (user) (time in minutes) (reason) \n EG: -mute @kyle 10 spam");
 
