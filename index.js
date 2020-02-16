@@ -239,6 +239,10 @@ for (const item of message.guild.members) {
     member.setNickname(`${nick}`)  
   }} else return message.reply("Ur gay")
 }
+
+if(command === "kiss"){
+message.channel.send("(0//0)")
+}
   
   if(command === "kick") {
     // This command must be limited to the roles we wanna choose. In this example we just hardcode the role names.
