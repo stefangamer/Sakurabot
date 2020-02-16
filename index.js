@@ -48,7 +48,7 @@ client.on("message", async message => {
   // args = ["Is", "this", "the", "real", "life?"]
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  const content = message.content
+  const content = message
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   client.on('guildMemberAdd', member => {
