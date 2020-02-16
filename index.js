@@ -157,6 +157,10 @@ return `${user.username}\'s avatar: ${user.displayAvatarURL}`;
 
 message.channel.send(avatarList);
 }
+
+if (command === "pet") {
+message.channel.send("U... UwU ❤")
+}
 	
   if(command === "warn") {
     var embedColor = '#ffffff' // Change this to change the color of the embeds!
