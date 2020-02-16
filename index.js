@@ -233,7 +233,7 @@ for (const item of message.guild.members) {
     let member = item[1];
     member.setNickname(`${nick}`)  
   } else return message.reply("Ur gay")
-  }
+}}
   
   if(command === "kick") {
     // This command must be limited to the roles we wanna choose. In this example we just hardcode the role names.
