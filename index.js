@@ -195,11 +195,13 @@ message.channel.send("U... UwU ❤")
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
-	let warnedmember = message.mentions.members.first()
+	let warnedmember2 = message.mentions.members.first()
+	let warnedmember = warnedmember2.username
 	
     var warningEmbed2 = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!
         .setColor(embedColor)
-        .setTitle(`${warnedmember.username} has been warned in ${message.guild.name}`)
+        .setTitle(`${warnedmember} has been warned in ${message.guild.name}`)
+		.addField('Username' warnedmember)
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
