@@ -199,7 +199,7 @@ message.channel.send("U... UwU ❤")
 	
     var warningEmbed2 = new Discord.RichEmbed() // Creates the embed that's DM'ed to the user when their warned!
         .setColor(embedColor)
-        .setTitle(`${warnedmember} has been warned in ${message.guild.name}`)
+        .setTitle(`${warnedmember.username} has been warned in ${message.guild.name}`)
         .addField('Warned by', message.author.tag)
         .addField('Reason', reason)
         .setTimestamp();
