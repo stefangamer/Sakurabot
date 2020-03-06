@@ -57,7 +57,10 @@ client.on("message", async message => {
   var role = member.guild.roles.find('name', 'Member');
   member.addRole(role);
 });
-  
+ if (command === "help") {
+	     message.channel.send("I've sent you a list of my commands through DM!")
+        message.author.send("```These are my commands. \n -Ticket, Create a ticket. \n -Credit, see the credits :3```")
+ }
 if(command === "ticket") {
 message.delete()
 let user = message.member.user.tag
