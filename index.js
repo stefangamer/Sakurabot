@@ -156,7 +156,7 @@ client.on("message", async message => {
         let firstwarning = message.guild.roles.find("name", "1 Warning")
 		if(!firstwarning) return message.reply("Yo idk dude but you seem kinda stupid to me, you cannot even make me function properly smh")
 	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
-	message.member.addRole(firstwarning.id)}
+	message.mentions.members.first().addRole(firstwarning.id)}
 }
 
 
