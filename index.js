@@ -154,10 +154,15 @@ client.on("message", async message => {
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
         let firstwarning = message.guild.roles.find("name", "1 Warning")
-		if(!firstwarning) return message.reply("Yo idk dude but you seem kinda stupid to me, you cannot even make me function properly smh")
-	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
-	message.mentions.members.first().addRole(firstwarning.id)}
-}
+		let secondwarning = message.guild.roles.find("name", "1 Warning")
+		let thirdwarning = message.guild.roles.find("name", "1 Warning")
+	if (!message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
+	message.mentions.members.first().addRole(firstwarning.id)
+     } else if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
+	 message.mentions.members.first().addRole(secondwarning.id)
+	 } else if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name))) {
+	 message.mentions.members.first().addRole(thirfwarning.id)}
+	 }
 
 
   if(command === "purge")//delete messages 
