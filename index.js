@@ -153,11 +153,11 @@ client.on("message", async message => {
             .setTimestamp();
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
-let firstwarning = message.guild.roles.find(role => role.name === "1 Warning");
+        let firstwarning = message.guild.roles.find("name", "1 Warning")
+        member.addRole(memberRole)
 	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
-	message.member.addRole(firstwarning)
-	}
-  }
+	message.member.addRole(firstwarning.id)}
+}
 
 
   if(command === "purge")//delete messages 
