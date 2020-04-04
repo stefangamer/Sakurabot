@@ -154,7 +154,7 @@ client.on("message", async message => {
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
         let firstwarning = message.guild.roles.find("name", "1 Warning")
-        member.addRole(memberRole)
+		if(!firstwarning) return message.reply("Yo idk dude but you seem kinda stupid to me, you cannot even make me function properly smh")
 	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
 	message.member.addRole(firstwarning.id)}
 }
