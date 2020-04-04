@@ -66,33 +66,33 @@ client.on("message", async message => {
                     icon_url: client.user.avatarURL
                 },
                 title: "Help",
-                description: "***_These are my commands for now, more will be added in the future._***",
+                description: "***_So you want to know how to use my power? Here is a quick guide!_***",
                 fields: [{
-                        name: "!ping",
+                        name: "ping",
                         value: "Disabled for now"
                     },
                     {
-                        name: "!kick",
+                        name: "kick",
                         value: "Kick a player (you need a role called moderator)."
                     },
                     {
-                        name: "!ban",
+                        name: "ban",
                         value: "Ban a player (you need a role called admin)."
                     },
                     {
-                        name: "!purge (amount)",
+                        name: "purge (amount)",
                         value: "Deletes the last x messages."
                     },
                     {
-                        name: "!hug (person)",
+                        name: "hug (person)",
                         value: "Give this person a neat hug!"
                     },
                     {
-                        name: "!mute and !unmute",
+                        name: "mute and unmute",
                         value: "Mute or unmute a user"
                     },
                     {
-                        name: "!warn",
+                        name: "warn",
                         value: "Give a user a warning."
                     }
                 ],
@@ -153,6 +153,9 @@ client.on("message", async message => {
             .setTimestamp();
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
+	let firstwarning = message.guild.roles.find(role => role.name === "1 Warning");
+	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
+	message.member.addRole(firstwarning)
     }
 
 
