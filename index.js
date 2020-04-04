@@ -156,6 +156,7 @@ client.on("message", async message => {
         let firstwarning = message.guild.roles.find("name", "1 Warning")
 		let secondwarning = message.guild.roles.find("name", "2 Warnings")
 		let thirdwarning = message.guild.roles.find("name", "3 Warnings")
+		if(!thirdwarning) return message.reply("Husky stfu you can't code can't find the third warning role sucks to suck")
 		let muterole = message.guild.roles.find("name", "muted")
 			   let mutetime = 2
     let muteminutes = mutetime * 60000
@@ -163,10 +164,14 @@ client.on("message", async message => {
 		let poop = message.mentions.members.first()
 	if (!poop.roles.some(r => ["1 Warning"].includes(r.name))) {
 	poop.addRole(firstwarning.id)
-     } else if(poop.roles.some(r => ["1 Warning"].includes(r.name))) {
+     } else if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
 	 poop.addRole(secondwarning.id)
-	 } else {
+	 } else if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name))) {
 	 poop.addRole(thirdwarning.id)
+	 await(poop.addRole(muterole.id));
+	 setTimeout(function() {
+         tomute.removeRole(muterole.id); 
+        }, timeInt);
 	 }
 	 }
 
