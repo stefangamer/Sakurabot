@@ -154,15 +154,15 @@ client.on("message", async message => {
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
         let firstwarning = message.guild.roles.find("name", "1 Warning")
-		let secondwarning = message.guild.roles.find("name", "1 Warning")
-		let thirdwarning = message.guild.roles.find("name", "1 Warning")
+		let secondwarning = message.guild.roles.find("name", "2 Warnings")
+		let thirdwarning = message.guild.roles.find("name", "3 Warnings")
 		let poop = message.mentions.members.first()
 	if (!poop.roles.some(r => ["1 Warning"].includes(r.name))) {
 	poop.addRole(firstwarning.id)
      } else if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
 	 poop.addRole(secondwarning.id)
 	 } else if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name))) {
-	 poop.addRole(thirfwarning.id)}
+	 poop.addRole(thirdwarning.id)}
 	 }
 
 
