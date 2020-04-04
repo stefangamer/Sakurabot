@@ -153,6 +153,10 @@ client.on("message", async message => {
             .setTimestamp();
         message.delete(); // Deletes the command
         warnchannel.send(warningEmbed2);
+let firstwarning = message.guild.roles.find(role => role.name === "1 Warning");
+	if (!message.member.roles.some(r => ["1 Warning"].includes(r.name))) {
+	message.member.addRole(firstwarning)
+	}
   }
 
 
