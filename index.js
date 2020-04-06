@@ -57,6 +57,7 @@ client.on("message", async message => {
 });
  if (command === "help") {
 let input = args.join(" ");
+message.delete()
 if (!input) {
         //Please only mess with new lines
         const m = message.channel.send("I've sent you a list of my commands through DM!")
@@ -108,10 +109,34 @@ if (!input) {
     }
 if(input == "help") {
 const embed = new Discord.RichEmbed()
-.setTitle("`help`")
-.setDescription("Thiscontains info on how to properly use `help`")
+.setTitle("`!help`")
+.setDescription("This contains info on how to properly use `!help`")
 .addField("Description", "Shows this command!")
-.addField("Usage", "```help [command name]```")
+.addField("Usage", "```!help (command name)```")
+.addField("Example", "```!help kick```")
+.addField("Permissions needed", "None")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "kick") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!kick`")
+.setDescription("This contains info on how to properly use `!kick`")
+.addField("Description", "Kicks a user from the server.")
+.addField("Usage", "```!kick [user] (reason)```")
+.addField("Example", "```!kick @Husky spam```")
+.addField("Permissions needed", "`KICK_MEMBERS`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "ban") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!ban`")
+.setDescription("This contains info on how to properly use `!ban`")
+.addField("Description", "Bans a user from the server.")
+.addField("Usage", "```!ban [user] (reason)```")
+.addField("Example", "```!ban @Husky spam```")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
 message.channel.send(embed)
 }
  }
