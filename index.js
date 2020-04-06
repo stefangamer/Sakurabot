@@ -234,7 +234,7 @@ if (command === "role") {
  }
 
 
-if (command === "removerole") {
+if (command === "removerole" || "unrole") {
  if(message.member.hasPermission('MANAGE_ROLES'))
 	message.delete()
     const sayMessage = args.slice(1).join(' ');
