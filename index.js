@@ -51,6 +51,10 @@ client.on("message", async message => {
     const content = message.content;
     const commands = [
         {
+            name: "help",
+            value: "Show this help info."
+        },
+        {
             name: "kick",
             value: "Kick a member."
         },
