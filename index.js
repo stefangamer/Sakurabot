@@ -54,10 +54,6 @@ client.on("message", async message => {
             name: "help",
             value: "Show this help info."
         },
-		{
-		    name: ""
-            value " "			
-		},
         {
             name: "kick",
             value: "Kick a member."
@@ -130,7 +126,7 @@ client.on("message", async message => {
             return item.name === input;
         });
 
-        if (validCommand === undefined) {
+        if (!validCommand) {
             message.channel.send('That is not a valid command, SMH....');
             return;
         }
