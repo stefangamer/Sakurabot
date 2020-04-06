@@ -114,6 +114,7 @@ const embed = new Discord.RichEmbed()
 .addField("Usage", "```help [command name]```")
 message.channel.send(embed)
 }
+ }
 
 
     if (command === "warn") {
