@@ -192,7 +192,7 @@ client.on("message", async message => {
 }
 
  
-  if (command === "echo" || "say") {
+  if (command === "echo") {
  if (!message.member.hasPermission('MANAGE_MESSAGES'))
             return message.reply("I won't let you take control of my body!");
             message.delete()
