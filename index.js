@@ -63,16 +63,24 @@ client.on("message", async message => {
             value: "Ban a member."
         },
         {
-            name: "purge (amount)",
+            name: "purge",
             value: "Deletes the last x messages."
         },
         {
-            name: "mute and unmute",
-            value: "Mute or unmute a user"
+            name: "mute",
+            value: "Mute a user"
+        },
+		{
+            name: "unmute",
+            value: "Unute a user"
         },
         {
-            name: "role and removerole",
-            value: "Add/Remove a role from a user."
+            name: "role",
+            value: "Add a role to a user."
+        },
+		{
+            name: "removerole",
+            value: "Remove a role from a user."
         },
         {
             name: "warn",
