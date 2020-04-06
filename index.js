@@ -54,6 +54,10 @@ client.on("message", async message => {
             name: "help",
             value: "Show this help info."
         },
+		{
+		    name: ""
+            value ""			
+		},
         {
             name: "kick",
             value: "Kick a member."
