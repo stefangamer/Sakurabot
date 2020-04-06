@@ -221,6 +221,17 @@ message.delete()
             // And we get the bot to say the thing: 
             channel.send(sayMessage);
  }
+ 
+if (command === "role") {
+ if (!message.member.hasPermission('MANAGE_ROLES'))
+	message.delete()
+    const sayMessage = args[1]
+    let role = message.guild.roles.find("name", `${sayMessage}`)
+	if(!role) return message.channel.send("Role not found")
+	message.mentions.members.first().addRole(role.id)
+    message.channel.send(`Sucesfully added role ${role} to ${messsage.mentions.members.first().tag`)
+ }
+
 
     if (command === "kick") {
         // This command must be limited to the roles we wanna choose. In this example we just hardcode the role names.
