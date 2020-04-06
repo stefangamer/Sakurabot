@@ -229,8 +229,8 @@ if (command === "role") {
     let role = message.guild.roles.find("name", `${sayMessage}`)
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().addRole(role.id)
-    message.channel.send(`Sucesfully added role ${sayMessage} to ${messsage.mentions.members.first().tag}`)
- }
+    message.channel.send(`Sucesfully added role ${sayMessage} to Husky`)
+ }	
 
 
     if (command === "kick") {
