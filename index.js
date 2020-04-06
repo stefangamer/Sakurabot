@@ -242,7 +242,7 @@ if (command === "removerole") {
 	let roled = message.mentions.members.first()
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().removeRole(role.id)
-    message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
+    message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
  }	
  
 
