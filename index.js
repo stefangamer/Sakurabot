@@ -171,7 +171,7 @@ client.on("message", async message => {
 	 await(poop.addRole(muterole.id));
 	 setTimeout(function() {
          poop.removeRole(muterole.id); 
-        }, timeInt).catch
+        }, timeInt)
 	 }
 	 }
 
