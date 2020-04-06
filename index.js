@@ -56,7 +56,7 @@ client.on("message", async message => {
         },
 		{
 		    name: ""
-            value ""			
+            value " "			
 		},
         {
             name: "kick",
