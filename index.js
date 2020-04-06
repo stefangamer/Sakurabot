@@ -232,8 +232,7 @@ if (command === "role") {
 	if(!roled) {roled = message.author}
 	if(!role) return message.channel.send("Role not found")
 	let memberrole = message.member.highestRole
-    if(role.position > memberrole.position){
-    return await message.channel.send("Your role is below that role, nice try though.")}
+
 	roled.addRole(role.id)
     message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
  }
@@ -279,7 +278,7 @@ if (command === "removerole") {
 		
 let role = message.member.highestRole
 let memberrole = member.highestRole
-if(role.position > memberrole.position){
+if(role.position < memberrole.position){
 return await message.channel.send("Can't kick them, they are more powerful than you are!")}
 
         // Now, time for a swift kick in the nuts!
@@ -317,7 +316,7 @@ if(command === "ban") {
 
 let role = message.member.highestRole
 let memberrole = member.highestRole
-if(role.position > memberrole.position){
+if(role.position < memberrole.position){
 return await message.channel.send("Can't ban them, they are more powerful than you are!")}
 	
     let reason = args.slice(1).join(' ');
