@@ -234,6 +234,8 @@ if (command === "role") {
 	let memberrole = message.member.highestRole
     if(role.position > memberrole.position){
     return await message.channel.send("Your role is below that role, nice try though.")}
+	if(role.position == memberrole.position){
+    return await message.channel.send("Your role is equal to that role, you can't give that role.")}
 	roled.addRole(role.id)
     message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
  }
@@ -250,6 +252,8 @@ if (command === "removerole") {
 	let memberrole = message.member.highestRole
     if(role.position > memberrole.position){
     return await message.channel.send("Your role is below that role, nice try though.")}
+	if(role.position == memberrole.position){
+    return await message.channel.send("Your role is equal to that role, you can't remove that role.")}
 	message.mentions.members.first().removeRole(role.id)
     message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
 }
