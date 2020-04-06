@@ -126,7 +126,7 @@ client.on("message", async message => {
             return item.name === input;
         });
 
-        if (!validCommand) {
+        if (!validCommand && !!input) {
             message.channel.send('That is not a valid command, SMH....');
             return;
         }
