@@ -166,13 +166,7 @@ client.on("message", async message => {
 	poop.addRole(firstwarning.id)
      } else if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
 	 poop.addRole(secondwarning.id)
-	 } else if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name))) {
-	 poop.addRole(thirdwarning.id)
-	 await(poop.addRole(muterole.id));
-	 setTimeout(function() {
-         tomute.removeRole(muterole.id); 
-        }, timeInt);
-	 }
+	 } 
 	 }
 
 
