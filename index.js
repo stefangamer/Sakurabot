@@ -56,6 +56,8 @@ client.on("message", async message => {
 
 });
  if (command === "help") {
+let input = args.join(" ");
+if (!input) {
         //Please only mess with new lines
         const m = message.channel.send("I've sent you a list of my commands through DM!")
         message.author.send({
@@ -68,16 +70,12 @@ client.on("message", async message => {
                 title: "Help",
                 description: "***_So you want to know how to use my power? Here is a quick guide!_***",
                 fields: [{
-                        name: "ping",
-                        value: "Disabled for now"
-                    },
-                    {
                         name: "kick",
-                        value: "Kick a player (you need a role called moderator)."
+                        value: "Kick a member."
                     },
                     {
                         name: "ban",
-                        value: "Ban a player (you need a role called admin)."
+                        value: "Ban a member."
                     },
                     {
                         name: "purge (amount)",
@@ -90,6 +88,10 @@ client.on("message", async message => {
                     {
                         name: "mute and unmute",
                         value: "Mute or unmute a user"
+                    },
+					{
+                        name: "Role and Unrole",
+                        value: "Add/Remove a role from a user"
                     },
                     {
                         name: "warn",
@@ -104,6 +106,14 @@ client.on("message", async message => {
             }
         });
     }
+if(input == "help") {
+const embed = new Discord.RichEmbed()
+.setTitle("`help`")
+.setDescription("Thiscontains info on how to properly use `help`")
+.addField("Description", "Shows this command!")
+.addField("Usage", "```help [command name]```")
+message.channel.send(embed)
+}
 
 
     if (command === "warn") {
