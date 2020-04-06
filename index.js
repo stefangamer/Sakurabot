@@ -158,7 +158,7 @@ client.on("message", async message => {
 		let thirdwarning = message.guild.roles.find("name", "3 Warnings")
 		if(!thirdwarning) return message.reply("Husky stfu you can't code can't find the third warning role sucks to suck")
 		let muterole = message.guild.roles.find("name", "muted")
-			   let mutetime = 2
+	    let mutetime = 1440
     let muteminutes = mutetime * 60000
    timeInt = parseInt(muteminutes)
     let poop = message.mentions.members.first()
