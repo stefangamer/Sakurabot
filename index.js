@@ -170,7 +170,7 @@ client.on("message", async message => {
 	 poop.addRole(thirdwarning.id)
 	 await(poop.addRole(muterole.id));
 	 setTimeout(function() {
-         user.removeRole(muterole.id); 
+         poop.removeRole(muterole.id); 
         }, timeInt).catch
 	 }
 	 }
@@ -181,7 +181,7 @@ client.on("message", async message => {
  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No can do.");
  const deleteCount = parseInt(args[0], 10);
  const deleteCount2 = parseInt(deleteCount + 1)
-  
+ if(!deleteCount2 > 99) return message.reply("Please give an amount between 0 and 99")
     
     if(!deleteCount || deleteCount < 1 || deleteCount > 100)// min and max purge 
       return message.reply("Please provide a number between 1 and 99 for the number of messages to delete");
