@@ -276,6 +276,11 @@ if (command === "removerole") {
         // join(' ') takes all the various parts to make it a single string.
         let reason = args.slice(1).join(' ');
         if (!reason) reason = "No reason provided";
+		
+let role = message.member.highestRole
+let let memberrole = member.highestRole
+if(role.position > memberrole.position){
+return await message.channel.send("Can't kick them, they are more powerful than you are!")}
 
         // Now, time for a swift kick in the nuts!
         await member.kick(reason)
@@ -310,6 +315,11 @@ if(command === "ban") {
     if(!member.bannable) 
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
+let role = message.member.highestRole
+let let memberrole = member.highestRole
+if(role.position > memberrole.position){
+return await message.channel.send("Can't ban them, they are more powerful than you are!")}
+	
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "No reason provided";
     
