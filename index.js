@@ -316,7 +316,7 @@ if(command === "ban") {
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
 let role = message.member.highestRole
-let let memberrole = member.highestRole
+let memberrole = member.highestRole
 if(role.position > memberrole.position){
 return await message.channel.send("Can't ban them, they are more powerful than you are!")}
 	
