@@ -231,7 +231,20 @@ if (command === "role") {
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().addRole(role.id)
     message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
+ }
+
+
+if (command === "removerole") {
+ if(message.member.hasPermission('MANAGE_ROLES'))
+	message.delete()
+    const sayMessage = args.slice(1).join(' ');
+    let role = message.guild.roles.find("name", `${sayMessage}`)
+	let roled = message.mentions.members.first()
+	if(!role) return message.channel.send("Role not found")
+	message.mentions.members.first().removeRole(role.id)
+    message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
  }	
+ 
 
 
     if (command === "kick") {
