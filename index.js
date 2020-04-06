@@ -167,7 +167,7 @@ client.on("message", async message => {
      } else if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
 	 poop.addRole(secondwarning.id)
 	 } else if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name)))  {
-	 poop.addRole(thirdwarning.id)
+	 message.channel.send("You're at your third warning, nice one")
 	 } 
 	 }
 
