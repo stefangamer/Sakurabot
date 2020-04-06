@@ -166,9 +166,13 @@ client.on("message", async message => {
 	poop.addRole(firstwarning.id)
      } if(message.mentions.members.first().roles.some(r => ["1 Warning"].includes(r.name))) {
 	 poop.addRole(secondwarning.id)
-	 } if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name)))  {
-	 message.channel.send("You're at your third warning, nice one")
-	 } 
+	 } if(message.mentions.members.first().roles.some(r => ["2 Warnings"].includes(r.name))) {
+	 poop.addRole(thirdwarning.id)
+	 await(poop.addRole(muterole.id));
+	 setTimeout(function() {
+         tomute.removeRole(muterole.id); 
+        }, timeInt);
+	 }
 	 }
 
 
