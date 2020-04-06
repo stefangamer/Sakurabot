@@ -227,10 +227,9 @@ if (command === "role") {
 	message.delete()
     const sayMessage = args.slice(1).join(' ');
     let role = message.guild.roles.find("name", `${sayMessage}`)
-	let roled = messsage.mentions.members.first()
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().addRole(role.id)
-    message.channel.send(`Sucesfully added role ${sayMessage} to Husky`)
+    message.channel.send(`Sucesfully added role ${sayMessage} to ${messsage.mentions.members.first().tag}`)
  }
 
 
