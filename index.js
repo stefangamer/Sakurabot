@@ -230,7 +230,7 @@ if (command === "role") {
 	let roled = messsage.mentions.members.first()
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().addRole(role.id)
-    message.channel.send(`Sucesfully added role ${role} to `)
+    message.channel.send(`Sucesfully added role ${sayMessage} to ${Roled.tag}`)
  }
 
 
