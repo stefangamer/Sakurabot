@@ -219,7 +219,7 @@ if (command === "role") {
 	if(!role) return message.channel.send("Role not found")
     let memberrole = member.highestRole
     if(role.position > memberrole.position){
-    return await message.channel.send("Your role is below that role, nice try though.")}
+    return message.reply("Your role is below that role, nice try though.")}
 	message.mentions.members.first().addRole(role.id)
     message.channel.send(`Sucesfully added role ${sayMessage} to ${roled.user.tag}`)
  }
@@ -233,7 +233,7 @@ if (command === "removerole" || "unrole") {
 	let roled = message.mentions.members.first()
 	if(!role) return message.channel.send("Role not found")
     if(role.position > memberrole.position){
-    return await message.channel.send("Your role is below that role, nice try though.")}
+    return message.reply("Your role is below that role, nice try though.")}
 	message.mentions.members.first().removeRole(role.id)
     message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
  }	
