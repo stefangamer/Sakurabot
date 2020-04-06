@@ -170,7 +170,7 @@ client.on("message", async message => {
 	 poop.addRole(thirdwarning.id)
 	 await(poop.addRole(muterole.id));
 	 setTimeout(function() {
-         poop.removeRole(muterole.id); 
+         user.removeRole(muterole.id); 
         }, timeInt).catch
 	 }
 	 }
