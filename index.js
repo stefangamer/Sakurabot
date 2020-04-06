@@ -83,20 +83,20 @@ if (!input) {
                         value: "Deletes the last x messages."
                     },
                     {
-                        name: "hug (person)",
-                        value: "Give this person a neat hug!"
-                    },
-                    {
                         name: "mute and unmute",
                         value: "Mute or unmute a user"
                     },
 					{
-                        name: "Role and Unrole",
-                        value: "Add/Remove a role from a user"
+                        name: "role and removerole",
+                        value: "Add/Remove a role from a user."
                     },
                     {
                         name: "warn",
                         value: "Give a user a warning."
+                    },
+					{
+                        name: "echo",
+                        value: "Let the bot send a message."
                     }
                 ],
                 timestamp: new Date(),
@@ -114,7 +114,7 @@ const embed = new Discord.RichEmbed()
 .addField("Description", "Shows this command!")
 .addField("Usage", "```!help (command name)```")
 .addField("Example", "```!help kick```")
-.addField("Permissions needed", "None")
+.addField("Permissions needed", "`None`")
 .setFooter("Variables surrounded by [] are mandatory, () means optional")
 message.channel.send(embed)
 }
@@ -136,10 +136,88 @@ const embed = new Discord.RichEmbed()
 .addField("Description", "Bans a user from the server.")
 .addField("Usage", "```!ban [user] (reason)```")
 .addField("Example", "```!ban @Husky spam```")
+.addField("Permissions needed", "`BAN_MEMBERS`")
 .setFooter("Variables surrounded by [] are mandatory, () means optional")
 message.channel.send(embed)
 }
+if(input == "purge") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!purge`")
+.setDescription("This contains info on how to properly use `!purge`")
+.addField("Description", "Deletes an amount of messages.")
+.addField("Usage", "```!purge [amount between 1-99]```")
+.addField("Example", "```!purge 20```")
+.addField("Permissions needed", "`MANAGE_MESSAGES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "mute") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!mute`")
+.setDescription("This contains info on how to properly use `!mute`")
+.addField("Description", "Mutes a user.")
+.addField("Usage", "```!mute [@user] [time in muinutes] (reason)```")
+.addField("Example", "```!mute @Husky 10 spam```")
+.addField("Permissions needed", "`MANAGE_MESSAGES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "ummute") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!mute`")
+.setDescription("This contains info on how to properly use `!ummute`")
+.addField("Description", "Unmutes a user.")
+.addField("Usage", "```!unmute [@user]```")
+.addField("Example", "```!unmute @Husky```")
+.addField("Permissions needed", "`MANAGE_MESSAGES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "role") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!role`")
+.setDescription("This contains info on how to properly use `!role`")
+.addField("Description", "Gives a role to a user.")
+.addField("Usage", "```!role [@user] [role name (case sensitive!)]```")
+.addField("Example", "```!role @Husky Administrator```")
+.addField("Permissions needed", "`MANAGE_ROLES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "removerole") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!removerole`")
+.setDescription("This contains info on how to properly use `!removerole`")
+.addField("Description", "Removes a role from a user.")
+.addField("Usage", "```!removerole [@user] [role name (case sensitive!)]```")
+.addField("Example", "```!removerole @Husky Administrator```")
+.addField("Permissions needed", "`MANAGE_ROLES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "warn") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!warn`")
+.setDescription("This contains info on how to properly use `!warn`")
+.addField("Description", "Gives a warning to a user.")
+.addField("Usage", "```!warn [@user] [reason]```")
+.addField("Example", "```!warn @husky spam```")
+.addField("Permissions needed", "`MANAGE_MESSAGES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
+}
+if(input == "echo") {
+const embed = new Discord.RichEmbed()
+.setTitle("`!echo`")
+.setDescription("This contains info on how to properly use `!echo`")
+.addField("Description", "Lets the bot send a specific message in a channel")
+.addField("Usage", "```!echo (channel mention) [message]```")
+.addField("Example", "```!echo hi or !echo #general hi```")
+.addField("Permissions needed", "`MANAGE_MESSAGES`")
+.setFooter("Variables surrounded by [] are mandatory, () means optional")
+message.channel.send(embed)
  }
+}
 
 
     if (command === "warn") {
@@ -211,6 +289,14 @@ message.channel.send(embed)
 	 }
 	 }
 
+if(command === "unmute"){
+  message.delete()
+  let muteduser = message.mentions.members.first()
+  if(!muteduser) return message.channel.send("Please specify a user to unmute. For correct usage use `!help unmute`")
+  let role = message.guild.roles.find("name", "muted")
+  muteduser.removeRole(role)
+  message.channel.send(`Successfully unmuted ${muteduser.user.tag}`)
+}
 
   if(command === "purge")//delete messages 
   {
