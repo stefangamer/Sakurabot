@@ -225,7 +225,7 @@ message.delete()
 if (command === "role") {
  if(message.member.hasPermission('MANAGE_ROLES'))
 	message.delete()
-    const sayMessage = args[1]
+    const sayMessage = args.slice(1).join(' ');
     let role = message.guild.roles.find("name", `${sayMessage}`)
 	if(!role) return message.channel.send("Role not found")
 	message.mentions.members.first().addRole(role.id)
