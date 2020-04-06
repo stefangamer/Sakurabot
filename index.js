@@ -110,11 +110,11 @@ client.on("message", async message => {
             });
         }
 
-        const commandlist = commands.map(function(item){
-            return item.name;
+        const validCommand = commands.find(function(item){
+            return item.name === input;
         });
 
-        if (!commandlist.contains(input)) {
+        if (validCommand === undefined) {
             message.channel.send('That is not a valid command, SMH....');
             return;
         }
