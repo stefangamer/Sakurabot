@@ -285,6 +285,8 @@ let role = message.member.highestRole
 let memberrole = member.highestRole
 if(role.position < memberrole.position){
 return await message.channel.send("Can't kick them, they are more powerful than you are!")}
+if(role.position == memberrole.position){
+return await message.channel.send("Can't kick them, they are as powerful as you are!")}
 
         // Now, time for a swift kick in the nuts!
         await member.kick(reason)
@@ -323,6 +325,8 @@ let role = message.member.highestRole
 let memberrole = member.highestRole
 if(role.position < memberrole.position){
 return await message.channel.send("Can't ban them, they are more powerful than you are!")}
+if(role.position == memberrole.position){
+return await message.channel.send("Can't ban them, they are as powerful as you are!")}
 	
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "No reason provided";
