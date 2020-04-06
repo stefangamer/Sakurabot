@@ -243,7 +243,7 @@ if (command === "removerole") {
  if(message.member.hasPermission('MANAGE_ROLES'))
 	message.delete()
     const sayMessage = args.slice(1).join(' ');
-	if(!sayMessage) {message.channel.send("Please mention a role, for correct usage use `!help removerole`")
+	if(!sayMessage) {message.channel.send("Please mention a role, for correct usage use `!help removerole`")}
     let role = message.guild.roles.find("name", `${sayMessage}`)
 	let roled = message.mentions.members.first()
 	if(!role) return message.channel.send("Role not found")
@@ -252,7 +252,7 @@ if (command === "removerole") {
     return await message.channel.send("Your role is below that role, nice try though.")}
 	message.mentions.members.first().removeRole(role.id)
     message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
-	}
+}
  
 
 
