@@ -278,7 +278,7 @@ if (command === "removerole") {
         if (!reason) reason = "No reason provided";
 		
 let role = message.member.highestRole
-let let memberrole = member.highestRole
+let memberrole = member.highestRole
 if(role.position > memberrole.position){
 return await message.channel.send("Can't kick them, they are more powerful than you are!")}
 
