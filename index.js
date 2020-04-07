@@ -419,13 +419,14 @@ client.on("message", async message => {
 	
 	
 	if (command === "nick") {
+	let nick = args.slice(1).join(' ');
 	if(!message.member.hasPermission('CHANGE_NICKNAME')) return message.channel.send("You don't have permissions to nick yourself")
 	let nickedperson = message.mentions.members.first
     if(!!nickedperson && !message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send("You don't have permissions to change others nicknames")
     if(!nickedperson) {
 	nickedperson = message.author
+	nick = args.join(' ');
 	}
-    let nick = args.slice(1).join(' ');
     if(!nick) return message.channel.send("Please provide a nickname")
     nickedperson.setNickname(`${nick}`);
     message.channel.send(`${nickedperson.username}'s nickname changed to ${nick}`)
