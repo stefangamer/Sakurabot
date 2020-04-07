@@ -429,7 +429,7 @@ client.on("message", async message => {
 	}
     if(!nick) return message.channel.send("Please provide a nickname")
 	if(!!nickedperson) {
-	nick = args[1]
+	nick = args[0]
 	}
     nickedperson.setNickname(`${nick}`);
     message.channel.send(`${nickedperson.user.name}'s nickname changed to ${nick}`)
