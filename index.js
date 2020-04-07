@@ -419,6 +419,7 @@ client.on("message", async message => {
 	
 	
 	if (command === "nick") {
+	message.delete()
 	let nick = "none"
 	if(!message.member.hasPermission('CHANGE_NICKNAME')) return message.channel.send("You don't have permissions to nick yourself")
 	let nickedperson = message.mentions.members.first()
