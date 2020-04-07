@@ -86,6 +86,10 @@ client.on("message", async message => {
             name: "warn",
             value: "Give a user a warning."
         },
+		{
+            name: "nick",
+            value: "Change a nickname"
+        },
         {
             name: "echo",
             value: "Let the bot send a message."
@@ -238,6 +242,17 @@ client.on("message", async message => {
                 .addField("Usage", "```!echo (channel mention) [message]```")
                 .addField("Example", "```!echo hi or !echo #general hi```")
                 .addField("Permissions needed", "`MANAGE_MESSAGES`")
+                .setFooter("Variables surrounded by [] are mandatory, () means optional");
+            message.channel.send(embed)
+        }
+		if (input === "nick") {
+            const embed = new Discord.RichEmbed()
+                .setTitle("`!nick`")
+                .setDescription("This contains info on how to properly use `!nick`")
+                .addField("Description", "Changes a user's nickname")
+                .addField("Usage", "```!nick (user) (nickname)```")
+                .addField("Example", "```!nick @Husky potato or !nick potato```")
+                .addField("Permissions needed", "`CHANGE_NICKNAME` and `MANAGE_NICKNAMES` to change nicknames from other members")
                 .setFooter("Variables surrounded by [] are mandatory, () means optional");
             message.channel.send(embed)
         }
