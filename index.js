@@ -426,7 +426,7 @@ client.on("message", async message => {
     if(!!nickedperson && !message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send("You don't have permissions to change others nicknames")
     if(!nickedperson) {
 	nickedperson = message.member
-	nick = args.slice(0).join(' ');
+	nick = args.slice(1).join(' ');
 	}
     if(!nick) {nick = nickedperson.user.username}
 	if(!!nickedperson) {
