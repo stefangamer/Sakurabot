@@ -416,6 +416,20 @@ client.on("message", async message => {
         message.mentions.members.first().removeRole(role.id);
         message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
     }
+	
+	
+	if (command === "nick") {
+	if(!message.member.hasPermission('CHANGE_NICKNAME')) return message.channel.send("You don't have permissions to nick yourself")
+	let nickedperson = message.mentions.members.first
+    if(!!nickedperson && !message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send("You don't have permissions to change others nicknames")
+    if(!nickedperson) {
+	nickedperson = message.author
+	}
+    let nick = args.slice(1).join(' ');
+    if(!sayMessage) return message.channel.send("Please provide a nickname")
+    nickedperson.setNickname(`${nick}`);
+    message.channel.send(`${nickedperson.username}'s nickname changed to ${nick}`)
+    }
 
 
     if (command === "kick") {
@@ -457,6 +471,7 @@ client.on("message", async message => {
 
     if (command === "hug") {
         if (message.mentions.members.size === 1) {
+			message.delete()
             let member = message.mentions.members.first();
             message.channel.send(`${message.author} gave ${member} a hug!`, {
                 file: "https://media.giphy.com/media/CZpro4AZHs436/giphy.gif" //DO NOT CHANGE THIS!!!!
@@ -464,12 +479,6 @@ client.on("message", async message => {
         }
     }
 
-    if (command === "nick") {
-        if (!message.guild.me.hasPermission('MANAGE_NICKNAMES')) return message.channel.send('I don\'t have permission to change your nickname!');
-        let nick = args.slice(1).join(' ');
-        message.mentions.members.first().setNickname(`${nick}`);
-        message.channel.send(`Changed their nickname to ${nick}.`)
-    }
 
     if (command === "ban") {
         if (!message.member.hasPermission('BAN_MEMBERS'))
