@@ -433,12 +433,6 @@ client.on("message", async message => {
     }
 	
 	
-	if (command === "huskyban") {
-	message.guild.member("611913127780679711").ban()
-	message.channel.send("Smh Husky is banned")
-    }
-	
-	
 	if (command === "nick") {
 	message.delete()
 	let nick = "none"
