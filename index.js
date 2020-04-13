@@ -31,6 +31,10 @@ client.on("guildDelete", guild => {
     client.user.setActivity(`Catching villains in ${client.guilds.size} servers!`);
 });
 
+client.on('guildMemberAdd', member => {
+    member.guild.channels.get('681963893123448846').send("Welcome"); 
+});
+
 client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
 
