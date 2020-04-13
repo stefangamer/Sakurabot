@@ -36,7 +36,7 @@ derp = ("https://tenor.com/view/deku-bokunoheroacademia-myheroacademia-gif-10005
 const embed = new Discord.RichEmbed()
 .setTitle(`${member.user.username} Joined!`)
 .setImage(derp)
-member.guild.channels.get('681963893123448846').send("test succesful")
+member.guild.channels.get('681963893123448846').send(embed)
 });
 
 client.on("message", async message => {
