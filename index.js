@@ -32,7 +32,7 @@ client.on("guildDelete", guild => {
 });
 
 client.on('guildMemberAdd', member => {
-derp = ("https://tenor.com/view/deku-bokunoheroacademia-myheroacademia-gif-10005421")
+derp = ("https://media1.tenor.com/images/919f30bf3e1f824ea2dc31029c69c98d/tenor.gif?itemid=10005421")
 const embed = new Discord.RichEmbed()
 .setTitle(`${member.user.username} Joined!`)
 .setImage(derp)
