@@ -522,7 +522,7 @@ client.on("message", async message => {
 	
 	if (command === "noice") {
 		message.delete()
-        message.reply("*click* **Noice**")
+        message.channel.send("*click* **Noice**")
     }
 
 
