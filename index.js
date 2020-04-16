@@ -506,6 +506,12 @@ client.on("message", async message => {
             });
         }
     }
+	
+	
+	if (command === "secret") {
+		message.delete()
+        message.channel.send("Jay is a furry")
+    }
 
 
     if (command === "ban") {
