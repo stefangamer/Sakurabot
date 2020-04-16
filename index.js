@@ -512,6 +512,12 @@ client.on("message", async message => {
 		message.delete()
         message.channel.send("Jay is a furry")
     }
+	
+	
+	if (command === "hangman") {
+		message.delete()
+        message.channel.send("Ok. Ur dead. Happy now?")
+    }
 
 
     if (command === "ban") {
