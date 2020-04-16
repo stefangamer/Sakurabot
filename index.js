@@ -518,6 +518,12 @@ client.on("message", async message => {
 		message.delete()
         message.reply("Ok. Ur dead. Happy now?")
     }
+	
+	
+	if (command === "noice") {
+		message.delete()
+        message.reply("*click* **Noice**")
+    }
 
 
     if (command === "ban") {
