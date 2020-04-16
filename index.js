@@ -516,7 +516,7 @@ client.on("message", async message => {
 	
 	if (command === "hangman") {
 		message.delete()
-        message.channel.send("Ok. Ur dead. Happy now?")
+        message.reply("Ok. Ur dead. Happy now?")
     }
 
 
