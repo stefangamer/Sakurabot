@@ -16,28 +16,21 @@ client.on("ready", () => {
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
     // Example of changing the bot's playing game to something useful. `client.user` is what the
     // docs refer to as the "ClientUser".
-    client.user.setActivity(`Catching villains in ${client.guilds.size} servers!`);
+    client.user.setActivity(`Use !help to start!`);
 });
 
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setActivity(`Catching villains in ${client.guilds.size} servers!`);
+    client.user.setActivity(`Use !help to start!`);
 });
 
 client.on("guildDelete", guild => {
     // this event triggers when the bot is removed from a guild.
     console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-    client.user.setActivity(`Catching villains in ${client.guilds.size} servers!`);
+    client.user.setActivity(`Use !help to start!`);
 });
 
-client.on('guildMemberAdd', member => {
-derp = ("https://media1.tenor.com/images/919f30bf3e1f824ea2dc31029c69c98d/tenor.gif?itemid=10005421")
-const embed = new Discord.RichEmbed()
-.setTitle(`${member.user.username} Joined!`)
-.setImage(derp)
-member.guild.channels.get('681963893123448846').send(embed)
-});
 
 client.on("message", async message => {
     // This event will run on every single message received, from any channel or DM.
@@ -508,24 +501,6 @@ client.on("message", async message => {
     }
 	
 	
-	if (command === "secret") {
-		message.delete()
-        message.channel.send("Jay is a furry")
-    }
-	
-	
-	if (command === "hangman") {
-		message.delete()
-        message.reply("Ok. Ur dead. Happy now?")
-    }
-	
-	
-	if (command === "noice") {
-		message.delete()
-        message.channel.send("*click*  **noice**")
-    }
-
-
     if (command === "ban") {
         if (!message.member.hasPermission('BAN_MEMBERS'))
             return message.reply("Sorry, you don't have permissions to use this!");
