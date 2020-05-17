@@ -576,7 +576,7 @@ client.on("message", async message => {
             .addField("Muted User", tomute)
             .addField("Muted in", message.channel)
             .addField("Time", message.createdAt)
-            .addField("Length", mutetime + " minute(s)")
+            .addField("Length", mutetime)
             .addField("Reason", reason);
 
         let channel = message.guild.channels.find(c => c.name === "logs");
@@ -588,7 +588,7 @@ client.on("message", async message => {
         setTimeout(function () {
             tomute.removeRole(muterole.id);
         }, ms(mutetime));
-
+	message.reply(`muted ${tomute} for ${mutetime} beacause of reason: "`%{reason}`"`)
 //end of module
     }
 
