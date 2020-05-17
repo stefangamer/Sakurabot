@@ -587,7 +587,7 @@ client.on("message", async message => {
 
         setTimeout(function () {
             tomute.removeRole(muterole.id);
-        }, timeInt);
+        }, ms(mutetime));
 
 //end of module
     }
