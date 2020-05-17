@@ -565,7 +565,7 @@ client.on("message", async message => {
         });
 
         try {
-            await tomute.send(`Hi! You've been muted for ${mutetime} minute(s). Sorry!`)
+            await tomute.send(`Hi! You've been muted for ${mutetime}. Sorry!`)
         } catch (e) {
             message.channel.send(`A user has been muted... but their DMs are locked. They will be muted for ${mutetime} minutes`)
         }
