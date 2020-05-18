@@ -311,6 +311,7 @@ client.on("message", async message => {
         let firstwarning = message.guild.roles.find("name", "1 Warning");
         let secondwarning = message.guild.roles.find("name", "2 Warnings");
         let thirdwarning = message.guild.roles.find("name", "3 Warnings");
+        if (!thirdwarning) return message.reply("Husky stfu you can't code can't find the third warning role sucks to suck");
         let muterole = message.guild.roles.find("name", "muted");
         let mutetime = 1440;
         let muteminutes = mutetime * 60000;
