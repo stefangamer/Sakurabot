@@ -501,8 +501,9 @@ client.on("message", async message => {
     }
 	
 	if (command === "dice") {
+	  message.delete()
       let random = Math.floor(Math.random() * 6) + 1;
-	  message.reply(`you rolled a :game_die :${random} :game_die`)
+	  message.reply(`you rolled a :game_die: ${random} :game_die:`)
     }
 	
 	
