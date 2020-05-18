@@ -569,7 +569,9 @@ client.on("message", async message => {
         } catch (e) {
             message.channel.send(`A user has been muted... but their DMs are locked. They will be muted for ${mutetime} minutes`)
         }
-
+        
+	    message.reply(`muted ${tomute} for ${mutetime} beacause of reason: "`%{reason}`"`)
+			
         let muteembed = new Discord.RichEmbed()
             .setDescription(`Mute executed by ${message.author}`)
             .setColor("#0000000")
@@ -588,7 +590,6 @@ client.on("message", async message => {
         setTimeout(function () {
             tomute.removeRole(muterole.id);
         }, ms(mutetime));
-	message.reply(`muted ${tomute} for ${mutetime} beacause of reason: "`%{reason}`"`)
 //end of module
     }
 
