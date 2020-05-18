@@ -570,7 +570,7 @@ client.on("message", async message => {
             message.channel.send(`A user has been muted... but their DMs are locked. They will be muted for ${mutetime} minutes`)
         }
         
-	    message.reply(`muted ${tomute} for ${mutetime} beacause of reason: "`%{reason}`"`)
+	    message.reply(`muted ${tomute} for ${mutetime} beacause of reason: "` + `${reason}` + `"`)
 			
         let muteembed = new Discord.RichEmbed()
             .setDescription(`Mute executed by ${message.author}`)
