@@ -500,6 +500,11 @@ client.on("message", async message => {
         }
     }
 	
+	if (command === "dice") {
+      let random = Math.floor(Math.random() * 6) + 1;
+	  message.reply(`you rolled a :game_die :${random} :game_die`)
+    }
+	
 	
     if (command === "ban") {
         if (!message.member.hasPermission('BAN_MEMBERS'))
