@@ -486,7 +486,7 @@ client.on("message", async message => {
         // Now, time for a swift kick in the nuts!
         await member.kick(reason)
             .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-        message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+        message.reply(`	${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
     }
 
@@ -503,7 +503,7 @@ client.on("message", async message => {
 	if (command === "dice") {
 	  message.delete()
       let random = Math.floor(Math.random() * 6) + 1;
-	  message.channel.send(`:game_die:` + "`" + `${message.member.user.name}` + "`" + `you rolled a` + "`" + `${random} :game_die:`)
+	  message.channel.send(`:game_die:` + "`" + ` ${message.member.user.username}` + "`" + `you rolled a ` + "`" + `${random}` + "`" + `:game_die:`)
     }
 	
 	
