@@ -489,15 +489,6 @@ client.on("message", async message => {
 
     }
 
-    if (command === "hug") {
-        if (message.mentions.members.size === 1) {
-			message.delete()
-            let member = message.mentions.members.first();
-            message.channel.send(`${message.author} gave ${member} a hug!`, {
-                file: "https://media.giphy.com/media/CZpro4AZHs436/giphy.gif" //DO NOT CHANGE THIS!!!!
-            });
-        }
-    }
 	
 	if (command === "dice") {
 	  message.delete()
