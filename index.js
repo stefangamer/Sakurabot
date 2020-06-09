@@ -433,6 +433,7 @@ client.on("message", async message => {
     }
 	 
 	 if (command === "revive") {
+		message.delete()
 		message.channel.send(`${message.author} wants to chat <@&719882589522886677>!`)
 	 }
 	
