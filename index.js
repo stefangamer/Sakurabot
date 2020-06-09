@@ -433,8 +433,8 @@ client.on("message", async message => {
     }
 	 
 	 if (command === "revive") {
-		message.reply("No fuck you you gayass cunt")
-    }
+		message.reply(`${message.author} wants to chat <@!719884225544847360>`)
+	 }
 	
 	
 	if (command === "nick") {
