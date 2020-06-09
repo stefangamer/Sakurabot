@@ -595,7 +595,7 @@ client.on("message", async message => {
     }
 
     module.exports.help = {
-        name: "tempmute"
+        name: "mute"
     }
 });
 
