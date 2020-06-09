@@ -431,6 +431,10 @@ client.on("message", async message => {
         message.mentions.members.first().removeRole(role.id);
         message.channel.send(`Sucesfully removed role ${sayMessage} from ${roled.user.tag}`)
     }
+	 
+	 if (command === "revive") {
+		message.reply("No fuck you you gayass cunt")
+    }
 	
 	
 	if (command === "nick") {
