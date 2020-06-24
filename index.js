@@ -436,6 +436,11 @@ client.on("message", async message => {
 		message.delete()
 		message.channel.send(`${message.author} wants to chat <@&719882589522886677>!`)
 	 }
+	 
+	 if (command === "giorno") {
+		message.delete()
+		message.channel.send(`Giorno? Well JoJo isn't really my favorite anime or anyt- wait, ohhh u mean this giorno? the one that sucks at rocket league? Yea what about him.`)
+	 }
 	
 	
 	if (command === "nick") {
