@@ -102,11 +102,9 @@ client.on("message", async message => {
         console.log('User' + member.user.tag + 'has joined the server!');
 
     });
-<<<<<<< HEAD
     if (command === "price") {
 let item = args[0]
 message.channel.send(`**Price Request!** ${message.author} wants to know the price of **${item}** for switch <@&543091627367989307> <@&555543685199298560>`)
-=======
     if (command === "help") {
         let input = args.join(" ");
         message.delete();
